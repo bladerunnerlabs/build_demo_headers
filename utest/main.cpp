@@ -8,8 +8,8 @@ int main()
 
     cur_s = MY_API_STATE_READY;
     printf("utest calling my_api READY:\n");
-    next_s = my_api_get_next_state(s);
-    if (next_s != MY_API_STATE_ACTIVE)
+    next_s = my_api_next_state(cur_s);
+    if (next_s != MY_API_STATE_ACTIVE) {
        printf("got state != ACTIVE\n");
        return 1;
     }
